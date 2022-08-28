@@ -21,6 +21,9 @@ function App() {
   const [disabled, setDisabled] = useState(false)
 
 
+
+
+
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       setDisabled(true)
@@ -58,9 +61,16 @@ function App() {
       .sort(() => Math.random() - 0.5)
       .map(card => ({ ...card, id: Math.random() }))
 
+    setChoiceOne(null)
+    setChoiceTwo(null)
     setCards(shuffledCards)
     setTurns(0)
   }
+
+
+  useEffect(() => {
+    shuffleCards()
+  }, [])
 
 
   return (
@@ -78,6 +88,8 @@ function App() {
             disabled={disabled} />))
         }
       </div>
+
+      <p>Turns: {turns}</p>
 
     </div>
   );
