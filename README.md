@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# React Memory Game
 
 Simple React Memory Game.
 
